@@ -54,19 +54,31 @@ function limpiarFicha(ficha) {
 }
 
 function mostrarPokemon(ficha) {
-    document.querySelector("#info-pokemon").style.display = "block";
-    let pokemon = ficha.target.id;
-    fetch(` https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-        .then(respuesta => respuesta.json())
-        .then(respuesta => {
-            document.querySelector("#nombre").innerText = respuesta.name;
-            document.querySelector("#numero").innerText = respuesta.id;
-            document.querySelector("#foto").src = respuesta.sprites.front_default;
-            document.querySelector("#categoria").innerText = respuesta.types[0].type.name;
-            document.querySelector("#habilidad").innerText = respuesta.abilities[0].ability.name;
-            document.querySelector("#peso").innerText = respuesta.weight;
-            document.querySelector("#altura").innerText = respuesta.height;
 
-        })
-    return;
+    let pokemon = ficha.target.id;
+    if (pokemon === "poketablero") {
+        return;
+    } else {
+        fetch(` https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+            .then(respuesta => respuesta.json())
+            .then(respuesta => {
+                document.querySelector("#nombre").innerText = respuesta.name;
+                document.querySelector("#numero").innerText = respuesta.id;
+                document.querySelector("#foto").src = respuesta.sprites.front_default;
+                document.querySelector("#categoria").innerText = respuesta.types[0].type.name;
+                document.querySelector("#habilidad").innerText = respuesta.abilities[0].ability.name;
+                document.querySelector("#peso").innerText = respuesta.weight;
+                document.querySelector("#altura").innerText = respuesta.height;
+
+            })
+        return document.querySelector("#info-pokemon").style.display = "block";
+
+
+    }
+}
+
+document.querySelector("#cerrar-detalles").addEventListener("click", cerrarInfoPokemon, false);
+
+function cerrarInfoPokemon() {
+    return document.querySelector("#info-pokemon").style.display = "none";
 }
