@@ -62,8 +62,11 @@ function mostrarPokemon(ficha) {
             document.querySelector("#nombre").innerText = respuesta.name;
             document.querySelector("#numero").innerText = respuesta.id;
             document.querySelector("#foto").src = respuesta.sprites.front_default;
+            document.querySelector("#categoria").innerText = respuesta.types[0].type.name;
+            document.querySelector("#habilidad").innerText = respuesta.abilities[0].ability.name;
             document.querySelector("#peso").innerText = respuesta.weight;
             document.querySelector("#altura").innerText = respuesta.height;
+
         })
     return;
 }
