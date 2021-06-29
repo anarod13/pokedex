@@ -1,2 +1,2 @@
 # pokedex
-juego pokedex utilizando API's
+Pokedex utilizando API's, testeado con Cypress
