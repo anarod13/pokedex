@@ -71,7 +71,7 @@ function mostrarPokemon(ficha) {
                 document.querySelector("#altura").innerText = respuesta.height;
 
             })
-        return document.querySelector("#info-pokemon").style.display = "block";
+        return document.querySelector("#info-pokemon").style.display = "";
 
 
     }

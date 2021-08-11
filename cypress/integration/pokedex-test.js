@@ -6,12 +6,12 @@ context('Testeo Pokedex', () => {
     });
     describe('Chequea que el tablero muestre correctamente los pokemones', () => {
         it('Chequea que al ingresar el tablero muestre los 50 primeros pokemones', () => {
-            cy.get('.pokeficha').then((fichas) =>
+            cy.get('.pokeficha').then((fichas) => {
                 fichas.each(function(i, ficha) {
-                    cy.get(ficha).find(".pokenombre").should("not.deep.equal", "");
-                    // cy.get(ficha).find("src").should("not.deep.equal", "");
+                    // cy.find(".pokenombre").should("not.deep.equal", "");
+                    cy.get(ficha).find("src").should("not.be.empty");
                 })
-            )
+            })
         })
 
 
