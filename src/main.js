@@ -1,8 +1,7 @@
-import { seleccionarPagina, armarTablero, cerrarInfoPokemon } from '/src/ui.js';
+import { seleccionarPagina, armarTablero } from '/src/ui.js';
 
 let indice = document.querySelector("#indice");
-indice.addEventListener('click', cambiarPagina, false);
-// document.querySelector("#cerrar-detalles").addEventListener("click", cerrarInfoPokemon, false);
+indice.addEventListener('click', actualizarPagina, false);
 
 
 function inicializar() {
@@ -10,7 +9,7 @@ function inicializar() {
 }
 
 
-function cambiarPagina(paginaSeleccionada) {
+function actualizarPagina(paginaSeleccionada) {
     return seleccionarPagina(paginaSeleccionada, armarTablero);
 }
 
