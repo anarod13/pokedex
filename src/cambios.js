@@ -1,18 +1,17 @@
-import * as pokeapi from "./pokeapi.js";
+import * as pokeapi from './pokeapi.js';
 
 export async function cargarPokemon(indicePokemon) {
-    let pokemonAPI = await pokeapi.cargarPokemon(indicePokemon);
-    let pokemon = {};
+    const pokemonAPI = await pokeapi.cargarPokemon(indicePokemon);
+    const pokemon = {};
     pokemon.nombre = pokemonAPI.name;
     pokemon.foto = pokemonAPI.sprites.front_default;
     pokemon.id = pokemonAPI.name;
     return pokemon;
-
 }
 
 export async function cargarDetallesPokemon(pokemon) {
-    let detallesPokemonAPI = await pokeapi.cargarDetallesPokemon(pokemon);
-    let detallesPokemon = {};
+    const detallesPokemonAPI = await pokeapi.cargarDetallesPokemon(pokemon);
+    const detallesPokemon = {};
 
     detallesPokemon.nombre = detallesPokemonAPI.name;
     detallesPokemon.id = detallesPokemonAPI.id;
