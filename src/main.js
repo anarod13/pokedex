@@ -1,4 +1,4 @@
-import { seleccionarPagina, armarTablero } from '/src/ui.js';
+import { seleccionarPagina, armarTablero } from './ui.js';
 
 let indice = document.querySelector("#indice");
 indice.addEventListener('click', actualizarPagina, false);

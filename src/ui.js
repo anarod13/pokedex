@@ -1,9 +1,13 @@
 import { cargarPokemon, cargarDetallesPokemon } from './cambios.js';
 
 export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
-    const pagina = paginaSeleccionada.target.id.split('-')[1];
 
-    return callbackSeleccionPagina(pagina);
+    if (paginaSeleccionada.target.id === 'indice') {
+        return;
+    } else {
+        const pagina = paginaSeleccionada.target.id.split('-')[1];
+        return callbackSeleccionPagina(pagina);
+    }
 }
 
 export function armarTablero(pagina) {
@@ -40,7 +44,7 @@ async function asignarPokemon(ficha, indicePokemon) {
 export async function mostrarDetallesPokemon(pokemonSeleccionado) {
     const pokemon = pokemonSeleccionado.target.id || pokemonSeleccionado.target.parentNode.id;
     if (pokemon === 'poketablero') {
-
+        return;
     } else {
         const detallesPokemon = await cargarDetallesPokemon(pokemon);
         document.querySelector('#nombre').innerText = detallesPokemon.nombre;
