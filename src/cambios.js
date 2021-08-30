@@ -5,12 +5,13 @@ export async function cargarPokemon(indicePokemon) {
     const pokemon = {};
     pokemon.nombre = pokemonAPI.name;
     pokemon.foto = pokemonAPI.sprites.front_default;
-    pokemon.id = pokemonAPI.name;
+    pokemon.id = pokemonAPI.id;
+    // pokemon.id = pokemonAPI.name;
     return pokemon;
 }
 
 export async function cargarDetallesPokemon(pokemon) {
-    const detallesPokemonAPI = await pokeapi.cargarDetallesPokemon(pokemon);
+    const detallesPokemonAPI = await pokeapi.cargarPokemon(pokemon);
     const detallesPokemon = {};
 
     detallesPokemon.nombre = detallesPokemonAPI.name;

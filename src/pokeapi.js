@@ -4,7 +4,7 @@ export function cargarPokemon(i) {
         .then((respuesta) => respuesta.json());
 }
 
-export function cargarDetallesPokemon(pokemon) {
-    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-        .then((respuesta) => respuesta.json());
-}
+// export function cargarDetallesPokemon(pokemon) {
+//     return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+//         .then((respuesta) => respuesta.json());
+// }
