@@ -1,13 +1,26 @@
 import { cargarPokemon, cargarDetallesPokemon } from './cambios.js';
 
 export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
-
     if (paginaSeleccionada.target.id === 'indice') {
         return;
     } else {
+       actualizarIndicePagina(paginaSeleccionada);
         const pagina = paginaSeleccionada.target.id.split('-')[1];
         return callbackSeleccionPagina(pagina);
     }
+}
+
+function actualizarIndicePagina(pagina){
+const paginaActiva = document.querySelector(".seleccionada");
+if (paginaActiva){
+    if (paginaActiva.id !== pagina.target.id){
+        paginaActiva.classList.remove("seleccionada");
+        pagina.target.classList.add("seleccionada");
+    }
+}else{
+    pagina.target.classList.add("seleccionada");
+}
+
 }
 
 export function armarTablero(pagina) {
@@ -72,3 +85,4 @@ function limpiarFicha(ficha) {
     ficha.querySelector('.pokenombre').innerText = '';
     ficha.querySelector('.pokefoto').src = '';
 }
+

@@ -79,7 +79,7 @@ p {
     margin: 0% 7% 0% 7%;
 }
 
-#indice div {
+.pagina {
     color: white;
     width: 10.5%;
     background-color: rgb(207, 48, 48);
@@ -89,6 +89,11 @@ p {
     cursor: pointer;
     padding: 0.5% 0;
     margin-bottom: 2%;
+}
+
+.seleccionada{
+    background-color: rgb(236, 109, 109);
+    box-shadow: 0px 1.5px 3px rgb(236, 109, 109), inset 0px 5px 5px rgb(233, 81, 81);
 }
 
 #info-pokemon {
