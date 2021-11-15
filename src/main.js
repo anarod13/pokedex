@@ -1,8 +1,10 @@
 import { seleccionarPagina, armarTablero } from './ui.js';
 
-let indice = document.querySelector("#indice");
-indice.addEventListener('click', actualizarPagina, false);
+const $indice = document.querySelector("#indice");
 
+$indice.onclick = (e)=>{
+    actualizarPagina(e);
+}
 
 function inicializar() {
     armarTablero(0);

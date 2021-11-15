@@ -9,7 +9,7 @@
         "is-path-inside": "^3.0.3",
         "is-stream": "^2.0.0",
         "is-typedarray": "^1.0.0",
-        "is-unicode-supported": "^0.1.0",
+        "is-unicode- supported": "^0.1.0",
         "isexe": "^2.0.0",
         "isstream": "^0.1.2",
         "jsbn": "^0.1.1",
@@ -33,16 +33,23 @@
         "pend": "^1.2.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "babel-jest": "^27.3.1",
         "eslint": "^7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
-        "eslint-plugin-import": "^2.24.2"
+        "eslint-plugin-import": "^2.24.2",
+        "jest": "^27.3.1"
     },
     "scripts": {
-        "empezar": "http-server",
-        "cypress-run": "cypress run",
-        "cypress-dev": "cypress open",
-        "test": "run-p start cypress-run",
-        "test-dev": "run-p start cypress-dev"
+        "test": "jest",
+        "testcollect": "jest --collect-coverage",
+        "test:dev": "jest --watch",
+        "test:ui": "run-p serve test:cypress",
+        "test:ui:dev": "run-p serve test:cypress:dev",
+        "test:cypress": "cypress run",
+        "test:cypress:dev": "cypress open",
+        "serve": "http-server -c-1"
     },
     "repository": {
         "type": "git",

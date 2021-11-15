@@ -1,13 +1,13 @@
 import { cargarPokemon, cargarDetallesPokemon } from './cambios.js';
 
 export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
-    if (paginaSeleccionada.target.id === 'indice') {
-        return;
-    } else {
-       actualizarIndicePagina(paginaSeleccionada);
-        const pagina = paginaSeleccionada.target.id.split('-')[1];
-        return callbackSeleccionPagina(pagina);
-    }
+        if(!paginaSeleccionada.target.classList.contains("pagina")){   
+            return;
+        } else {
+        actualizarIndicePagina(paginaSeleccionada);
+            const pagina = paginaSeleccionada.target.id.split('-')[1];
+            return callbackSeleccionPagina(pagina);
+        }
 }
 
 function actualizarIndicePagina(pagina){
