@@ -4,6 +4,7 @@
     "description": "Pokedex con API, testeado con cypress",
     "main": "index.js",
     "dependencies": {
+        "bootstrap": "^5.1.3",
         "cypress": "^7.6.0",
         "form-data": "^2.3.3",
         "is-path-inside": "^3.0.3",
