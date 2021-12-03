@@ -1,4 +1,4 @@
-import { cargarPokemon, cargarDetallesPokemon } from './cambios.js';
+import { cargarPokemon } from './cambios.js';
 
 export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
         if(!paginaSeleccionada.target.classList.contains("pagina")){   
@@ -20,7 +20,6 @@ if (paginaActiva){
 }else{
     pagina.target.classList.add("seleccionada");
 }
-
 }
 
 export function armarTablero(pagina) {
@@ -59,13 +58,14 @@ export async function mostrarDetallesPokemon(pokemonSeleccionado) {
     if (pokemon === 'poketablero') {
         return;
     } else {
-        const detallesPokemon = await cargarDetallesPokemon(pokemon);
+        const detallesPokemon = await cargarPokemon(pokemon);
+      
         document.querySelector('#nombre').innerText = detallesPokemon.nombre;
         document.querySelector('#numero').innerText = detallesPokemon.id;
         document.querySelector('#foto').src = detallesPokemon.foto;
         document.querySelector('#categoria').innerText = detallesPokemon.categoria;
-        document.querySelector('#habilidad').innerText = detallesPokemon.habilidades;
-        document.querySelector('#peso').innerText = detallesPokemon.weight;
+        document.querySelector('#habilidad').innerText = detallesPokemon.habilidad;
+        document.querySelector('#peso').innerText = detallesPokemon.peso;
         document.querySelector('#altura').innerText = detallesPokemon.altura;
 
         mostrarInfoPokemon();

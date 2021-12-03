@@ -1,19 +1,11 @@
 export class Pokemon{
-constructor(nombre, foto, id, detalles){
+constructor(nombre, foto, id, categoria, habilidad, peso, altura){
 this.nombre = nombre;
 this.foto = foto;
 this.id = id;
-this.detalles = detalles;
-
+this.categoria = categoria;
+this.habilidad = habilidad;
+this.peso = peso;
+this.altura= altura;    
 }
-}
-
-
-export class Detalles{
-    constructor(categoria, habilidad, peso, altura){
-    this.categoria = categoria;
-    this.habilidades = habilidad;
-    this.peso = peso;
-    this.altura= altura;    
-    }
 }
