@@ -1,4 +1,4 @@
-import { cargarPokemon } from './cambios.js';
+import { cargarPokemon, cargarListadoPokemones } from './cambios.js';
 
 export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
         if(!paginaSeleccionada.target.classList.contains("pagina")){   
@@ -22,8 +22,9 @@ if (paginaActiva){
 }
 }
 
-export function armarTablero(pagina) {
-    const fichas = document.querySelectorAll('.pokeficha');
+export async function armarTablero(pagina) {
+    const fichas = document.querySelectorAll('.pokeficha'); 
+    console.log( await cargarListadoPokemones(pagina*50))
     fichas.forEach((ficha, indiceFicha) => {
         const indicePokemon = chequearIndicePokemon(indiceFicha, pagina);
         asignarPokemon(ficha, indicePokemon);
