@@ -4,6 +4,6 @@ export function cargarPokemon(pokemon) {
 
 
 export function guardarPokemon(pokemon, informacionPokemon) {
-    return localStorage.setItem(pokemon, informacionPokemon)
+    return localStorage.setItem(pokemon, JSON.stringify(informacionPokemon))
 
 }

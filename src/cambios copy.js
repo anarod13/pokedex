@@ -1,33 +1,29 @@
-import {cargarPokemon as cargarPokemonAPI}from './pokeapi.js';
+import * as pokeapi from './pokeapi.js';
 import {
     cargarPokemon
     as cargarPokemonCache,
     guardarPokemon
 }
 from './localStorage.js';
-import { mapearPokemon } from './mapeadores/mapeador.js';
-
-
 export async function cargarPokemon(indicePokemon) {
-    let pokemon;
-    try {  pokemon = cargarPokemonCache(indicePokemon) } 
-    catch {
+    try { cargarPokemonCache(pokemon) } catch {
 
-        const pokemonAPI = await cargarPokemonAPI(indicePokemon);
-         pokemon = mapearPokemon(pokemonAPI);
-        guardarPokemon(indicePokemon, pokemon)
-        
+        const pokemonAPI = await pokeapi.cargarPokemon(indicePokemon);
+        const pokemon = {};
+        pokemon.nombre = pokemonAPI.name;
+        pokemon.foto = pokemonAPI.sprites.front_default;
+        pokemon.id = pokemonAPI.id;
+        guardarPokemon(indicePokemon, pokemonAPI)
+        return pokemon;
     }
-    return pokemon;
 }
 
 export async function cargarDetallesPokemon(pokemon) {
-   let detallesPokemon;
     try {
-     detallesPokemon =  cargarPokemonCache(pokemon);
+        cargarPokemonCache(pokemon);
     } catch {
-        const detallesPokemonAPI = await cargarPokemonAPI(pokemon);
-      detallesPokemon = {};
+        const detallesPokemonAPI = await pokeapi.cargarPokemon(pokemon);
+        const detallesPokemon = {};
 
         detallesPokemon.nombre = detallesPokemonAPI.name;
         detallesPokemon.id = detallesPokemonAPI.id;
@@ -37,7 +33,6 @@ export async function cargarDetallesPokemon(pokemon) {
         detallesPokemon.peso = detallesPokemonAPI.weight;
         detallesPokemon.altura = detallesPokemonAPI.height;
         guardarPokemon(pokemon, detallesPokemonAPI)
-                
+        return detallesPokemon;
     }
-    return detallesPokemon;
 }
