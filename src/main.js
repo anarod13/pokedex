@@ -1,5 +1,4 @@
-import { seleccionarPagina, armarTablero } from './ui.js';
-
+import { seleccionarPagina, armarTablero } from './ui.js/general.js';
 const $indice = document.querySelector("#indice");
 
 $indice.onclick = (e)=>{

@@ -1,5 +1,5 @@
-export function cargarPokemon(i) {
-    const acceso = `https://pokeapi.co/api/v2/pokemon/${i}`;
+export function cargarPokemon(pokemon) {
+    const acceso = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
     return fetch(acceso)
         .then((respuesta) => respuesta.json());
 }
@@ -11,11 +11,3 @@ export function cargarListadoPokemones(offset,limit = LIMITE_DE_POKEMONES){
     return fetch(acceso)
         .then((respuesta) => respuesta.json());
 }
-
-export function cargarImagen(url){
-    const urlPokemon = fetch(url)
-        .then((respuesta) => respuesta.json());
-    console.log(urlPokemon)
-    const imagenPokemon = urlPokemon.sprites.front_default;
-    return imagenPokemon;
-    }

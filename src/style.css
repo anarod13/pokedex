@@ -57,11 +57,12 @@ p {
 
 .pokeficha {
     width: 17%;
-    height: 120px;
+    height: 30px;
     background-color: rgb(235, 235, 235);
     border-color: rgb(206, 203, 190);
     border-width: 500px;
     border-radius: 10px;
+    font-size:x-large;
     margin: 1%;
     display: flex;
     justify-content: center;

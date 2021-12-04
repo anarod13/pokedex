@@ -23,19 +23,17 @@ const {
         altura);
 }
 
-export  function mapearListado(datosApi, callback=()=>{}){
+export  function mapearListado(datosApi){
     const{
         previous:urlAnterior,
         next: urlSiguiente,
     results:listado
     } = datosApi;
 
-  
-
     return new ListadoPokemon(
         urlAnterior,
         urlSiguiente,
-        listado.map((pokemon)=> callback(pokemon))        
+        listado.map((pokemon)=> pokemon.name)        
     )
 
 }
