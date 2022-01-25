@@ -38,5 +38,22 @@ catch(e) {
     guardarListadoPagina(pagina,listadoPokemones);
     
     }
-    return listadoPokemones;
+    return datosPagina;
 }
+
+// export async function cargarListadoPokemones(pagina){
+//     let listadoPokemones;
+//     try{
+//         listadoPokemones = cargarListadoPokemonesDeCache(pagina)
+//     }
+//     catch(e) {
+//         const inicioListado = pagina*50;
+//         const PokemonesPorPaginaAPI = await cargarListadoPokemonesAPI(inicioListado,LIMITE_DE_POKEMONES);
+//         let datosPagina= mapearListado(PokemonesPorPaginaAPI);
+//         listadoPokemones = datosPagina.listadoPokemones;
+//         guardarListadoPagina(pagina,listadoPokemones);
+        
+//         }
+//         return listadoPokemones;
+//     }
+    

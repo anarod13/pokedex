@@ -12,6 +12,16 @@ export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
         }
 }
 
+// export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
+//     if(!paginaSeleccionada.target.classList.contains("pagina")){   
+//         return;
+//     } else {
+//     actualizarIndicePagina(paginaSeleccionada);
+//         const pagina = paginaSeleccionada.target.id.split('-')[1];
+//         return callbackSeleccionPagina(pagina);
+//     }
+// } 
+
 function actualizarIndicePagina(pagina){
 const paginaActiva = document.querySelector(".seleccionada");
 if (paginaActiva){

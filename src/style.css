@@ -19,7 +19,8 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
+
     font-family: "retro-gaming";
 }
 
@@ -71,15 +72,15 @@ img {
 
 #indice {
     display: grid;
-    justify-content: space-around;
     grid-template-columns: repeat(9, 1fr);
     gap: 10px;
-    width: 90%;
+    width: auto;
     align-self: center;}
 
 .pagina {
     color: white;
     background-color: rgb(207, 48, 48);
+    padding: 3px;
     border-radius: 4px;
     border: none;
     box-shadow: 0px 1.5px 3px rgb(236, 109, 109);
