@@ -1,4 +1,4 @@
-import {cargarListadoPokemones } from '../cambios.js';
+
 import { asignarPokemones } from './tablero.js';
 import { activarInfoPokemon } from './detallesPokemon.js';
 
@@ -7,7 +7,7 @@ export function seleccionarPagina(paginaSeleccionada, callbackSeleccionPagina) {
             return;
         } else {
         actualizarIndicePagina(paginaSeleccionada);
-            const pagina = paginaSeleccionada.target.id.split('-')[1];
+            const pagina = Number(paginaSeleccionada.target.textContent);
             return callbackSeleccionPagina(pagina);
         }
 }
@@ -34,9 +34,8 @@ if (paginaActiva){
 }
 }
 
-export async function armarTablero(pagina) {
+export async function armarTablero(listadoPokemones) {
 
-    const listadoPokemones = await cargarListadoPokemones(pagina);
     return asignarPokemones(listadoPokemones, activarInfoPokemon());
     
 }

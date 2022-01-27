@@ -1,4 +1,5 @@
 import { seleccionarPagina, armarTablero } from './ui.js/general.js';
+import { armarPaginador } from './ui.js/paginador.js';
 const $indice = document.querySelector("#indice");
 
 $indice.onclick = (e)=>{
@@ -6,12 +7,12 @@ $indice.onclick = (e)=>{
 }
 
 function inicializar() {
-    armarTablero(0);
+    armarPaginador(3);
 }
 
 
 function actualizarPagina(paginaSeleccionada) {
-    return seleccionarPagina(paginaSeleccionada, armarTablero);
+    return seleccionarPagina(paginaSeleccionada, armarPaginador);
 }
 
 inicializar();
