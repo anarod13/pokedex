@@ -1,5 +1,4 @@
 
-import { armarTablero } from "./general.js";
 import { LIMITE_DE_POKEMONES } from "../cambios.js";
 
 
@@ -21,7 +20,7 @@ function obtenerParametrosPagina(url){
 }
 
 
-export function armarPaginador(totalPokemones){
+export function armarPaginador(totalPokemones, callbackIndice){
     
     const $indice = document.querySelector("#indice")
     const cantidadDePaginas = totalPokemones/LIMITE_DE_POKEMONES;
@@ -35,6 +34,9 @@ export function armarPaginador(totalPokemones){
 
     $indice.appendChild(crearItemPaginador(">>",""))
 
+    $indice.onclick = (e)=>{
+        callbackIndice(e);
+    }
     return 
 }
 
@@ -43,36 +45,5 @@ function crearItemPaginador(pagina, offset){
     $pagina.classList.add("pagina")
     $pagina.textContent = pagina;
     $pagina.setAttribute('offset',offset)
-    console.log($pagina)
     return $pagina;
 }
-
-// export async function armarPaginador (paginaActual){
-
-    // const datosPagina = await cargarListadoPokemones(paginaActual)
-    // const $paginas = document.querySelectorAll(".pagina");
-    //     if (3 < paginaActual < 37){
-    //         let index= -3
-    //         $paginas.forEach(($pagina, i)=>{
-    //         if (0<i<6){
-    //             let numeroDePagina = paginaActual-index;
-    //             asignarDatosPagina($pagina,numeroDePagina)
-    //             } else{
-    //                 if(i=0){
-    //                     let offset = obtenerParametrosPagina(datosPagina.urlAnterior)
-    //                     $pagina.setAttribute('offset',offset)
-    //                 }
-    //                 if(i=6){
-    //                     let offset = obtenerParametrosPagina(datosPagina.urlSiguiente);
-    //                     $pagina.setAttribute('offset',offset)
-    //                 }
-    //                     }
-                
-    //         index = index--;
-            
-    //             })
-    //             // console.log(offset, numeroDePagina, index)
-    //             return armarTablero(datosPagina.listado)
-    //     }}
-
-

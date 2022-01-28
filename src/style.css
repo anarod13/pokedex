@@ -40,7 +40,7 @@ h1 {
     align-self: center;
     display: grid;
     grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(6, 40px);
+    grid-template-rows: repeat(6, 70px);
     width: 90%;
     gap: 10px;
     padding: 3%;
@@ -54,7 +54,7 @@ img {
 
 
 .pokeficha {
-    height: 30px;
+    height:60px;
     background-color: rgb(235, 235, 235);
     border-color: rgb(206, 203, 190);
     border-width: 500px;
@@ -126,7 +126,6 @@ img {
 .cerrar-detalles{
     font-size: 150%;
     grid-area: close;
-    
     cursor: pointer;
     right: -20%;
     top: -40%;
@@ -148,8 +147,7 @@ img {
 }
 
 #cerrar-detalles {
-
-    
+   
     position: absolute;
     cursor: pointer;
 }

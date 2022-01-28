@@ -1,8 +1,16 @@
+
+
+
 export function asignarPokemones(listadoPokemones, callbackActivarTablero){
-    const fichas = document.querySelectorAll('.pokeficha'); 
-    fichas.forEach((ficha, indice) => {
-        ficha.querySelector('.pokenombre').innerText = listadoPokemones[indice];
-        ficha.id = listadoPokemones[indice];
-            });
+    const $tablero = document.querySelector("#poketablero");
+    $tablero.innerHTML= "";
+    listadoPokemones.forEach((pokemon=>{
+    const $ficha = document.createElement('div');
+    $ficha.classList.add('pokeficha')
+    $ficha.textContent = pokemon;
+    $ficha.id = pokemon;
+    $tablero.appendChild($ficha);
+}))    
+
     return callbackActivarTablero;
 }
