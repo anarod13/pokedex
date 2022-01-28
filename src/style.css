@@ -72,9 +72,9 @@ img {
 
 #indice {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(24, 1fr);
     gap: 10px;
-    width: auto;
+    
     align-self: center;}
 
 .pagina {

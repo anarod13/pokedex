@@ -27,12 +27,14 @@ export  function mapearListado(datosApi){
     const{
         previous:urlAnterior,
         next: urlSiguiente,
-    results:listado
+        count: totalPokemones,
+        results:listado
     } = datosApi;
 
     return new ListadoPokemon(
         urlAnterior,
         urlSiguiente,
+        totalPokemones,
         listado.map((pokemon)=> pokemon.name)        
     )
 

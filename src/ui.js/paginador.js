@@ -1,6 +1,6 @@
-import {cargarListadoPokemones, LIMITE_DE_POKEMONES } from '../cambios.js';
-import { armarTablero } from "./general.js";
 
+import { armarTablero } from "./general.js";
+import { LIMITE_DE_POKEMONES } from "../cambios.js";
 
 
 
@@ -21,42 +21,29 @@ function obtenerParametrosPagina(url){
 }
 
 
-export async function armarPaginador(pagina,callbackPaginador){
-    const datosPagina = await cargarListadoPokemones;
-    $indice = document.querySelector("#indice")
-    const cantidadDePaginas = datosPagina.totalPokemones/LIMITE_DE_POKEMONES;
+export function armarPaginador(totalPokemones){
+    
+    const $indice = document.querySelector("#indice")
+    const cantidadDePaginas = totalPokemones/LIMITE_DE_POKEMONES;
 
-if (datosPagina.urlAnterior){
-    const offsetPaginaAnterior = obtenerParametrosPagina(datosPagina.urlAnterior);
-    $indice.appendChild(crearItemPaginador("<<",offsetPaginaAnterior))
-} else{
-    // deshabilitar click en anterior
-}
+    $indice.appendChild(crearItemPaginador("<<",""))
 
-    for (pagina=1;pagina<cantidadDePaginas;pagina++){
+    for (let pagina=1;pagina<cantidadDePaginas;pagina++){
         const offsetPagina = (pagina-1)*LIMITE_DE_POKEMONES;
         $indice.appendChild(crearItemPaginador(pagina,offsetPagina))
     }
 
-if(datosPagina.urlSiguiente){
-    const offsetPaginaSiguiente = obtenerParametrosPagina(datosPagina.urlSiguiente)
-    $indice.appendChild(crearItemPaginador(">>",offsetPaginaSiguiente))
-} else{
-    // deshabilitarPaginaSiguiente
-}
+    $indice.appendChild(crearItemPaginador(">>",""))
 
-if(pagina.target){
-    // activarSeleccionPagina
-}
-
-    return callbackPaginador(datosPagina.listado); //cambiar armarTablero para que reciba directamente el listado O hacer el if pagina existe entonces armar tablero (Mejor la opción 2)
+    return 
 }
 
 function crearItemPaginador(pagina, offset){
     let $pagina = document.createElement('div');
     $pagina.classList.add("pagina")
-    $pagina.textContet = pagina;
+    $pagina.textContent = pagina;
     $pagina.setAttribute('offset',offset)
+    console.log($pagina)
     return $pagina;
 }
 
