@@ -23,15 +23,16 @@ export async function cargarPokemon(indicePokemon) {
           }
     return pokemon;
         }
-export const LIMITE_DE_POKEMONES = 50;
+export const LIMITE_DE_POKEMONES = 30;
 
-export async function cargarListadoPokemones(offset){
+export async function cargarListadoPokemones(offset = 0){
 let datosPagina;
+const pagina = (offset/30)+1;
 try{
-    datosPagina = cargarListadoPokemonesDeCache(offset)
+    datosPagina = cargarListadoPokemonesDeCache(pagina)
 }
 catch(e) {
-    const pagina = offset/30;
+
     const PokemonesPorPaginaAPI = await cargarListadoPokemonesAPI(offset,LIMITE_DE_POKEMONES);
     datosPagina= mapearListado(PokemonesPorPaginaAPI);
     guardarListadoPagina(pagina,datosPagina);
@@ -40,19 +41,3 @@ catch(e) {
     return datosPagina;
 }
 
-// export async function cargarListadoPokemones(pagina){
-//     let listadoPokemones;
-//     try{
-//         listadoPokemones = cargarListadoPokemonesDeCache(pagina)
-//     }
-//     catch(e) {
-//         const inicioListado = pagina*50;
-//         const PokemonesPorPaginaAPI = await cargarListadoPokemonesAPI(inicioListado,LIMITE_DE_POKEMONES);
-//         let datosPagina= mapearListado(PokemonesPorPaginaAPI);
-//         listadoPokemones = datosPagina.listadoPokemones;
-//         guardarListadoPagina(pagina,listadoPokemones);
-        
-//         }
-//         return listadoPokemones;
-//     }
-    

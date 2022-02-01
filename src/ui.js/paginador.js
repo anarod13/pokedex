@@ -5,29 +5,16 @@ import { LIMITE_DE_POKEMONES } from "../cambios.js";
 
 
 
-function obtenerParametrosPagina(url){
- 
-    let offset;
-    let limit;
-    try{
-    offset = /offset=+[0-9]/gi.exec(url).pop();
-    limit = /limit=+[0-9]/
-    } catch(e){
-    offset = undefined;
-    limit = undefined;
-    }
-    return {offset,limit};
-}
 
 
 export function armarPaginador(totalPokemones, callbackIndice){
     
     const $indice = document.querySelector("#indice")
-    const cantidadDePaginas = totalPokemones/LIMITE_DE_POKEMONES;
+    const cantidadDePaginas = Math.ceil(totalPokemones/LIMITE_DE_POKEMONES);
 
     $indice.appendChild(crearItemPaginador("<<",""))
 
-    for (let pagina=1;pagina<cantidadDePaginas;pagina++){
+    for (let pagina=1;pagina<=cantidadDePaginas;pagina++){
         const offsetPagina = (pagina-1)*LIMITE_DE_POKEMONES;
         $indice.appendChild(crearItemPaginador(pagina,offsetPagina))
     }
@@ -37,6 +24,8 @@ export function armarPaginador(totalPokemones, callbackIndice){
     $indice.onclick = (e)=>{
         callbackIndice(e);
     }
+
+    identificarPaginasGuia($indice.children)
     return 
 }
 
@@ -46,4 +35,11 @@ function crearItemPaginador(pagina, offset){
     $pagina.textContent = pagina;
     $pagina.setAttribute('offset',offset)
     return $pagina;
+}
+
+
+function identificarPaginasGuia(indice){
+    indice[0].id = "anterior";
+    indice[indice.length-1].id = "siguiente";
+    return;
 }
