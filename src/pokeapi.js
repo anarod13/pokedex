@@ -4,7 +4,7 @@ export function cargarPokemon(pokemon) {
         .then((respuesta) => respuesta.json());
 }
 
-export const LIMITE_DE_POKEMONES = 30
+const LIMITE_DE_POKEMONES = 30
 
 export function cargarListadoPokemones(offset = 0,limit = LIMITE_DE_POKEMONES){
     const acceso = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;

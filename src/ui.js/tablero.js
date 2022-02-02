@@ -1,7 +1,12 @@
 
+import { activarInfoPokemon } from './detallesPokemon.js';
 
 
-export function asignarPokemones(listadoPokemones, callbackActivarTablero){
+export async function armarTablero(listadoPokemones) {
+    return asignarPokemones(listadoPokemones, activarInfoPokemon());
+}
+
+function asignarPokemones(listadoPokemones, callbackActivarTablero){
     const $tablero = document.querySelector("#poketablero");
     $tablero.innerHTML= "";
     listadoPokemones.forEach((pokemon=>{

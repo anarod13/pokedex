@@ -1,42 +1,29 @@
 
-import { asignarPokemones } from './tablero.js';
-import { activarInfoPokemon } from './detallesPokemon.js';
 import {cargarListadoPokemones } from '../cambios.js';
 
 
-
-
-
 function actualizarIndicePagina(pagina){
-const paginaActiva = document.querySelector(".seleccionada");
-let $pagina = pagina.target
+    const paginaActiva = document.querySelector(".seleccionada");
+    let $pagina = pagina.target
 
-if (paginaActiva){
-    if (paginaActiva.textContent !== $pagina.textContent){
-        paginaActiva.classList.remove("seleccionada");
+    if (paginaActiva){
+        if (paginaActiva.textContent !== $pagina.textContent){
+            paginaActiva.classList.remove("seleccionada");
+            $pagina.classList.add("seleccionada");
+        }
+    }else{
         $pagina.classList.add("seleccionada");
     }
-}else{
-    $pagina.classList.add("seleccionada");
+
+    if ($pagina.id){
+    let paginaDireccionada = ($pagina.getAttribute('offset')/30)+1;
+    const $indice = document.querySelectorAll(".pagina");
+    $indice[paginaDireccionada].click();
+    $pagina.classList.remove("seleccionada");
+    }
+    return;
 }
 
-if ($pagina.id){
-let paginaDireccionada = ($pagina.getAttribute('offset')/30)+1;
-const $indice = document.querySelectorAll(".pagina");
-$indice[paginaDireccionada].click();
-$pagina.classList.remove("seleccionada");
-}
-
-
-return;
-
-}
-
-export async function armarTablero(listadoPokemones) {
-
-    return asignarPokemones(listadoPokemones, activarInfoPokemon());
-    
-}
 
 
 export async function manejarCambioDePagina(paginaSeleccionada, callbackSeleccionPagina) {
@@ -75,7 +62,6 @@ function actualizarPaginasGuia(datosPagina){
 }
 
 function obtenerOffsetPagina(url){
- 
     let offset;
     try{
         offset = /offset=+[0-9]+/gi.exec(url).pop();
@@ -83,6 +69,5 @@ function obtenerOffsetPagina(url){
         } catch(e){
     offset = undefined;
         }
-
     return offset;
 }

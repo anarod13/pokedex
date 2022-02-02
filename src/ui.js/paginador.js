@@ -2,11 +2,6 @@
 import { LIMITE_DE_POKEMONES } from "../cambios.js";
 
 
-
-
-
-
-
 export function armarPaginador(totalPokemones, callbackIndice){
     
     const $indice = document.querySelector("#indice")
@@ -25,7 +20,7 @@ export function armarPaginador(totalPokemones, callbackIndice){
         callbackIndice(e);
     }
 
-    identificarPaginasGuia($indice.children)
+    identificarPaginasGuia($indice.children);
     return 
 }
 

@@ -1,7 +1,8 @@
 import {cargarListadoPokemones } from './cambios.js';
-import { armarTablero, manejarCambioDePagina} from './ui.js/general.js';
+import { manejarCambioDePagina} from './ui.js/manejoCambioDePagina.js';
 import { armarPaginador } from './ui.js/paginador.js';
 import { activarInfoPokemon } from './ui.js/detallesPokemon.js';
+import { armarTablero } from './ui.js/tablero.js';
 
 const $indice = document.querySelector("#indice");
 
