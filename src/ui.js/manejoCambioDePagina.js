@@ -1,5 +1,5 @@
 
-import {cargarListadoPokemones } from '../cambios.js';
+import {cargarDatosPagina } from '../cambios.js';
 
 
 function actualizarIndicePagina(pagina){
@@ -32,7 +32,7 @@ export async function manejarCambioDePagina(paginaSeleccionada, callbackSeleccio
     } else {
     actualizarIndicePagina(paginaSeleccionada);
     const offsetPagina = paginaSeleccionada.target.getAttribute("offset");
-    const datosPagina = await cargarListadoPokemones(offsetPagina);
+    const datosPagina = await cargarDatosPagina(offsetPagina);
     actualizarPaginasGuia(datosPagina)
     return callbackSeleccionPagina(datosPagina.listadoPokemones);
     }

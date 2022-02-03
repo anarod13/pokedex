@@ -1,4 +1,4 @@
-import { ListadoPokemon } from "../entidades/listadoPokemones.js";
+import { DatosPagina } from "../entidades/datosPagina.js";
 import { Pokemon } from "../entidades/pokemon.js";
 
 
@@ -23,7 +23,7 @@ const {
         altura);
 }
 
-export  function mapearListado(datosApi){
+export  function mapearDatosPagina(datosApi){
     const{
         previous:urlAnterior,
         next: urlSiguiente,
@@ -31,7 +31,7 @@ export  function mapearListado(datosApi){
         results:listado
     } = datosApi;
 
-    return new ListadoPokemon(
+    return new DatosPagina(
         urlAnterior,
         urlSiguiente,
         totalPokemones,

@@ -1,15 +1,15 @@
 import {cargarPokemon as cargarPokemonAPI}from './pokeapi.js';
-import { cargarListadoPokemones as cargarListadoPokemonesAPI } from './pokeapi.js';
+import { cargarDatosPagina as cargarDatosPaginaAPI } from './pokeapi.js';
 import {
     cargarPokemon
     as cargarPokemonCache,
     guardarPokemon,
-    cargarListadoPokemones 
-    as cargarListadoPokemonesDeCache,
-    guardarListadoPagina 
+    cargarDatosPagina 
+    as cargarDatosPaginaDeCache,
+    guardarDatosPagina 
 }
 from './localStorage.js';
-import { mapearListado, mapearPokemon } from './mapeadores/mapeador.js';
+import { mapearDatosPagina, mapearPokemon } from './mapeadores/mapeador.js';
 
 
 export async function cargarPokemon(indicePokemon) {
@@ -25,17 +25,17 @@ export async function cargarPokemon(indicePokemon) {
         }
 export const LIMITE_DE_POKEMONES = 30;
 
-export async function cargarListadoPokemones(offset = 0){
+export async function cargarDatosPagina(offset = 0){
 let datosPagina;
 const pagina = (offset/30)+1;
 try{
-    datosPagina = cargarListadoPokemonesDeCache(pagina)
+    datosPagina = cargarDatosPaginaDeCache(pagina)
 }
 catch(e) {
 
-    const PokemonesPorPaginaAPI = await cargarListadoPokemonesAPI(offset,LIMITE_DE_POKEMONES);
-    datosPagina= mapearListado(PokemonesPorPaginaAPI);
-    guardarListadoPagina(pagina,datosPagina);
+    const PokemonesPorPaginaAPI = await cargarDatosPaginaAPI(offset,LIMITE_DE_POKEMONES);
+    datosPagina= mapearDatosPagina(PokemonesPorPaginaAPI);
+    guardarDatosPagina(pagina,datosPagina);
     
     }
     return datosPagina;

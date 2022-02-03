@@ -1,4 +1,4 @@
-export class ListadoPokemon{
+export class DatosPagina{
     constructor(urlAnterior, urlSiguiente,totalPokemones, listadoPokemones =[]){
         this.urlAnterior = urlAnterior,
         this.urlSiguiente = urlSiguiente,

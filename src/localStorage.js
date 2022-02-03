@@ -13,17 +13,17 @@ export function guardarPokemon(pokemon, informacionPokemon) {
 
 }
 
-export function cargarListadoPokemones(pagina){
+export function cargarDatosPagina(pagina){
     const keyPagina = `pagina-${pagina}`;
-    const listadoPokemones = JSON.parse(localStorage.getItem(keyPagina));
-    if (listadoPokemones===null)
+    const datosPagina = JSON.parse(localStorage.getItem(keyPagina));
+    if (datosPagina===null)
     {
-        throw new Error (`Listado para página ${pagina} no encontrado`)
+        throw new Error (`Datos para página ${pagina} no encontrado`)
      }
-     return listadoPokemones;
+     return datosPagina;
 }
 
-export function guardarListadoPagina(pagina,listadoPokemones){
+export function guardarDatosPagina(pagina,datosPagina){
     const keyPagina = `pagina-${pagina}`;
-    return localStorage.setItem(keyPagina,JSON.stringify(listadoPokemones))
+    return localStorage.setItem(keyPagina,JSON.stringify(datosPagina))
 }

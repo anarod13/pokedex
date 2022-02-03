@@ -213,8 +213,17 @@ img {
 margin: 5px;
     }
 }
+@media (max-width:730px) {
+        
+    #indice{
+        grid-template-columns: repeat(14, 1fr);
+        }
+    #anterior{
+        grid-column-start: 2;
+    }
+}
 
-@media (max-width:430px) {
+@media (max-width:520px) {
     
     h1{
         font-size: 300%;
@@ -229,6 +238,9 @@ margin: 5px;
     #indice{
         grid-template-columns: repeat(10, 1fr);
        
+    }
+    #anterior{
+        grid-column-start: 1;
     }
 
     #info-pokemon{
