@@ -1,68 +1,69 @@
 {
-    "name": "pokedex",
-    "version": "1.0.0",
-    "description": "Pokedex con API, testeado con cypress",
-    "main": "index.js",
-    "dependencies": {
-        "cypress": "^7.6.0",
-        "form-data": "^2.3.3",
-        "is-path-inside": "^3.0.3",
-        "is-stream": "^2.0.0",
-        "is-typedarray": "^1.0.0",
-        "is-unicode- supported": "^0.1.0",
-        "isexe": "^2.0.0",
-        "isstream": "^0.1.2",
-        "jsbn": "^0.1.1",
-        "json-schema": "^0.2.3",
-        "json-schema-traverse": "^0.4.1",
-        "json-stringify-safe": "^5.0.1",
-        "lodash.once": "^4.1.1",
-        "merge-stream": "^2.0.0",
-        "mime-db": "^1.48.0",
-        "mime-types": "^2.1.31",
-        "mimic-fn": "^2.1.0",
-        "minimatch": "^3.0.4",
-        "ms": "^2.1.3",
-        "npm-run-path": "^4.0.1",
-        "oauth-sign": "^0.9.0",
-        "object-assign": "^4.1.1",
-        "onetime": "^5.1.2",
-        "p-map": "^4.0.0",
-        "path-is-absolute": "^1.0.1",
-        "path-key": "^3.1.1",
-        "pend": "^1.2.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.16.0",
-        "@babel/preset-env": "^7.16.0",
-        "babel-jest": "^27.3.1",
-        "eslint": "^7.32.0",
-        "eslint-config-airbnb-base": "^14.2.1",
-        "eslint-plugin-import": "^2.24.2",
-        "jest": "^27.3.1"
-    },
-    "scripts": {
-        "test": "jest",
-        "testcollect": "jest --collect-coverage",
-        "test:dev": "jest --watch",
-        "test:ui": "run-p serve test:cypress",
-        "test:ui:dev": "run-p serve test:cypress:dev",
-        "test:cypress": "cypress run",
-        "test:cypress:dev": "cypress open",
-        "serve": "http-server -c-1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/anarod13/pokedex.git"
-    },
-    "keywords": [
-        "pokedex",
-        "pokeapi"
-    ],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/anarod13/pokedex/issues"
-    },
-    "homepage": "https://github.com/anarod13/pokedex#readme"
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Pokedex con API, testeado con cypress",
+  "main": "index.js",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "cypress": "^7.6.0",
+    "form-data": "^2.3.3",
+    "is-path-inside": "^3.0.3",
+    "is-stream": "^2.0.0",
+    "is-typedarray": "^1.0.0",
+    "is-unicode- supported": "^0.1.0",
+    "isexe": "^2.0.0",
+    "isstream": "^0.1.2",
+    "jsbn": "^0.1.1",
+    "json-schema": "^0.2.3",
+    "json-schema-traverse": "^0.4.1",
+    "json-stringify-safe": "^5.0.1",
+    "lodash.once": "^4.1.1",
+    "merge-stream": "^2.0.0",
+    "mime-db": "^1.48.0",
+    "mime-types": "^2.1.31",
+    "mimic-fn": "^2.1.0",
+    "minimatch": "^3.0.4",
+    "ms": "^2.1.3",
+    "npm-run-path": "^4.0.1",
+    "oauth-sign": "^0.9.0",
+    "object-assign": "^4.1.1",
+    "onetime": "^5.1.2",
+    "p-map": "^4.0.0",
+    "path-is-absolute": "^1.0.1",
+    "path-key": "^3.1.1",
+    "pend": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-jest": "^27.3.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "jest": "^27.5.1"
+  },
+  "scripts": {
+    "test": "jest",
+    "testcollect": "jest --collect-coverage",
+    "test:dev": "jest --watch",
+    "test:ui": "run-p serve test:cypress",
+    "test:ui:dev": "run-p serve test:cypress:dev",
+    "test:cypress": "cypress run",
+    "test:cypress:dev": "cypress open",
+    "serve": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anarod13/pokedex.git"
+  },
+  "keywords": [
+    "pokedex",
+    "pokeapi"
+  ],
+  "author": "marijuli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anarod13/pokedex/issues"
+  },
+  "homepage": "https://github.com/anarod13/pokedex#readme"
 }

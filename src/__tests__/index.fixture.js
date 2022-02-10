@@ -45,4 +45,4 @@ export default `<!DOCTYPE html>
 
 
 </body>
-`
+`;
