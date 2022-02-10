@@ -1,12 +1,7 @@
 import { cargarPokemon } from "../cambios.js";
 
-export async function mostrarDetallesPokemon(pokemonSeleccionado) {
-    const pokemon = pokemonSeleccionado.target.id || pokemonSeleccionado.target.parentNode.id;
-    if (pokemon === 'poketablero') {
-        return;
-    } else {
-        const detallesPokemon = await cargarPokemon(pokemon);
-      
+export async function mostrarDetallesPokemon(detallesPokemon) {
+
         document.querySelector('#nombre').innerText = detallesPokemon.nombre;
         document.querySelector('#numero').innerText = detallesPokemon.id;
         document.querySelector('#foto').src = detallesPokemon.foto;
@@ -17,7 +12,7 @@ export async function mostrarDetallesPokemon(pokemonSeleccionado) {
 
         mostrarInfoPokemon();
     }
-}
+
 
 function mostrarInfoPokemon() {
     document.querySelector('#cerrar-detalles').onclick = cerrarInfoPokemon;
@@ -28,7 +23,3 @@ export function cerrarInfoPokemon() {
     return document.querySelector('#info-pokemon').style.display = 'none';
 }
 
-export function activarInfoPokemon() {
-    document.querySelector('#info-pokemon').style.display = 'none';
-    document.querySelector('#poketablero').addEventListener('click', mostrarDetallesPokemon, false);
-}

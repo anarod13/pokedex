@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import fixture from "./pokemon.fixture.js";
+import fixture from "./index.fixture.js";
 import { seleccionarPagina } from "../ui.js";
 
 

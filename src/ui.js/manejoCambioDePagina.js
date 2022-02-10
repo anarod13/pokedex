@@ -1,5 +1,6 @@
 
 import {cargarDatosPagina } from '../cambios.js';
+import {cerrarInfoPokemon} from './detallesPokemon.js'
 
 
 function actualizarIndicePagina(pagina){
@@ -21,6 +22,7 @@ function actualizarIndicePagina(pagina){
     $indice[paginaDireccionada].click();
     $pagina.classList.remove("seleccionada");
     }
+  
     return;
 }
 
@@ -34,6 +36,7 @@ export async function manejarCambioDePagina(paginaSeleccionada, callbackSeleccio
     const offsetPagina = paginaSeleccionada.target.getAttribute("offset");
     const datosPagina = await cargarDatosPagina(offsetPagina);
     actualizarPaginasGuia(datosPagina)
+    cerrarInfoPokemon();
     return callbackSeleccionPagina(datosPagina.listadoPokemones);
     }
 }

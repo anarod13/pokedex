@@ -12,7 +12,8 @@ from './localStorage.js';
 import { mapearDatosPagina, mapearPokemon } from './mapeadores/mapeador.js';
 
 
-export async function cargarPokemon(indicePokemon) {
+export async function cargarPokemon(pokemonSeleccionado) {
+    const indicePokemon = pokemonSeleccionado.target.id
     let pokemon;
     try {  pokemon = cargarPokemonCache(indicePokemon) } 
     catch(e) {

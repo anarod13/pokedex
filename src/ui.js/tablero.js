@@ -1,12 +1,14 @@
 
-import { activarInfoPokemon } from './detallesPokemon.js';
+import { cargarPokemon } from '../cambios.js';
+import { mostrarDetallesPokemon } from './detallesPokemon.js';
 
 
-export async function armarTablero(listadoPokemones) {
-    return asignarPokemones(listadoPokemones, activarInfoPokemon());
-}
+    export function armarTablero(listadoPokemones) {
+        return asignarPokemones(listadoPokemones,async (nombre) => {
+            mostrarDetallesPokemon(await cargarPokemon(nombre))})
+    }
 
-function asignarPokemones(listadoPokemones, callbackActivarTablero){
+export function asignarPokemones(listadoPokemones, callbackSeleccionPokemon = () => {}){
     const $tablero = document.querySelector("#poketablero");
     $tablero.innerHTML= "";
     listadoPokemones.forEach((pokemon=>{
@@ -14,8 +16,16 @@ function asignarPokemones(listadoPokemones, callbackActivarTablero){
     $ficha.classList.add('pokeficha')
     $ficha.textContent = pokemon;
     $ficha.id = pokemon;
+    $ficha.onclick = (e)=>{callbackSeleccionPokemon(e)}   
     $tablero.appendChild($ficha);
 }))    
 
-    return callbackActivarTablero;
+
+
+    return;
 }
+
+// function activarInfoPokemon(pokemon) {
+//     document.querySelector('#info-pokemon').style.display = 'none';
+//     document.querySelector('#poketablero').addEventListener('click', function(){(mostrarDetallesPokemon(pokemon,cargarPokemon(pokemon)))}, false);
+// }
