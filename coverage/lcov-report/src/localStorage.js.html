@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,17 +105,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable linebreak-style */
 export function <span class="fstat-no" title="function not covered" >cargarPokemon(</span>pokemonID) {
@@ -131,18 +131,18 @@ export function <span class="fstat-no" title="function not covered" >guardarPoke
 <span class="cstat-no" title="statement not covered" >  return localStorage.setItem(pokemon, JSON.stringify(informacionPokemon));</span>
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >cargarDatosPagina(</span>pagina) {
-  const keyPagina = <span class="cstat-no" title="statement not covered" >`pagina-${pagina}`;</span>
-  const datosPagina = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem(keyPagina));</span>
-<span class="cstat-no" title="statement not covered" >  if (datosPagina === null) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new Error(`Datos para página ${pagina} no encontrado`);</span>
+export function cargarDatosPagina(pagina) {
+  const keyPagina = `pagina-${pagina}`;
+  const datosPagina = JSON.parse(localStorage.getItem(keyPagina));
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (datosPagina === null) {
+    throw new Error(`Datos para página ${pagina} no encontrado`);
   }
 <span class="cstat-no" title="statement not covered" >  return datosPagina;</span>
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >guardarDatosPagina(</span>pagina, datosPagina) {
-  const keyPagina = <span class="cstat-no" title="statement not covered" >`pagina-${pagina}`;</span>
-<span class="cstat-no" title="statement not covered" >  return localStorage.setItem(keyPagina, JSON.stringify(datosPagina));</span>
+export function guardarDatosPagina(pagina, datosPagina) {
+  const keyPagina = `pagina-${pagina}`;
+  return localStorage.setItem(keyPagina, JSON.stringify(datosPagina));
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -151,7 +151,7 @@ export function <span class="fstat-no" title="function not covered" >guardarDato
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Feb 10 2022 19:51:31 GMT-0300 (hora estándar de Argentina)
+                at Fri Feb 11 2022 22:20:03 GMT-0300 (hora estándar de Argentina)
             </div>
         <script src="../prettify.js"></script>
         <script>

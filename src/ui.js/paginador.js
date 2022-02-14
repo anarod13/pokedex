@@ -18,9 +18,12 @@ export function armarPaginador(totalPokemones, callbackIndice) {
 
   $indice.appendChild(crearItemPaginador('>>', ''));
 
-  $indice.onclick = (e) => {
-    callbackIndice(e);
-  };
+  const $paginas = document.querySelectorAll('.pagina');
+  $paginas.forEach(($pagina) => {
+    $pagina.onclick = (e) => {
+      callbackIndice(e);
+    };
+  });
 
   identificarPaginasGuia($indice.children);
 }

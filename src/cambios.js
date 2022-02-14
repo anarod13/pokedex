@@ -38,5 +38,6 @@ export async function cargarDatosPagina(offset = 0) {
     datosPagina = mapearDatosPagina(PokemonesPorPaginaAPI);
     guardarDatosPagina(pagina, datosPagina);
   }
+
   return datosPagina;
 }

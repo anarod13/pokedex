@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">53.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>8/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/14</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,7 +105,8 @@
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,19 +134,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable linebreak-style */
 /* eslint-disable import/extensions */
@@ -177,17 +179,18 @@ export async function <span class="fstat-no" title="function not covered" >carga
 &nbsp;
 export const LIMITE_DE_POKEMONES = 30;
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >cargarDatosPagina(</span>offset = <span class="branch-0 cbranch-no" title="branch not covered" >0)</span> {
+export async function cargarDatosPagina(offset = <span class="branch-0 cbranch-no" title="branch not covered" >0)</span> {
   let datosPagina;
-  const pagina = <span class="cstat-no" title="statement not covered" >(offset / 30) + 1;</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    datosPagina = cargarDatosPaginaDeCache(pagina);</span>
+  const pagina = (offset / 30) + 1;
+  try {
+    datosPagina = cargarDatosPaginaDeCache(pagina);
   } catch (e) {
-    const PokemonesPorPaginaAPI = <span class="cstat-no" title="statement not covered" >await cargarDatosPaginaAPI(offset, LIMITE_DE_POKEMONES);</span>
-<span class="cstat-no" title="statement not covered" >    datosPagina = mapearDatosPagina(PokemonesPorPaginaAPI);</span>
-<span class="cstat-no" title="statement not covered" >    guardarDatosPagina(pagina, datosPagina);</span>
+    const PokemonesPorPaginaAPI = await cargarDatosPaginaAPI(offset, LIMITE_DE_POKEMONES);
+    datosPagina = mapearDatosPagina(PokemonesPorPaginaAPI);
+    guardarDatosPagina(pagina, datosPagina);
   }
-<span class="cstat-no" title="statement not covered" >  return datosPagina;</span>
+&nbsp;
+  return datosPagina;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -196,7 +199,7 @@ export async function <span class="fstat-no" title="function not covered" >carga
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Feb 10 2022 19:51:31 GMT-0300 (hora estándar de Argentina)
+                at Fri Feb 11 2022 22:20:03 GMT-0300 (hora estándar de Argentina)
             </div>
         <script src="../prettify.js"></script>
         <script>

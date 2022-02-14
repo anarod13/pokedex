@@ -4,7 +4,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/extensions */
 
-import fixture from './index.fixture';
+import fixture from '../../__tests__/index.fixture';
 import { mostrarDetallesPokemon } from '../detallesPokemon';
 
 const detallesPokemon = {
@@ -18,10 +18,10 @@ const detallesPokemon = {
 };
 
 document.body.innerHTML = fixture;
-mostrarDetallesPokemon(detallesPokemon);
 
 test('Testea que muestre los detalles del pokemon correctamente', () => {
-  expect(document.querySelector('#nombre').textContent).toContain('appletun');
+  mostrarDetallesPokemon(detallesPokemon);
+  expect(document.querySelector('#nombre').textContent).toEqual('appletun');
   expect(document.querySelector('#numero').textContent).toEqual('842');
   expect(document.querySelector('#foto').src).toEqual('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/842.png');
   expect(document.querySelector('#categoria').textContent).toEqual('grass');

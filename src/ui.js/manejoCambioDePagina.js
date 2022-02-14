@@ -32,16 +32,12 @@ function actualizarIndicePagina(pagina) {
 }
 
 export async function manejarCambioDePagina(paginaSeleccionada, callbackSeleccionPagina) {
-  if (!paginaSeleccionada.target.classList.contains('pagina')) {
-    return;
-  } else {
-    actualizarIndicePagina(paginaSeleccionada);
-    const offsetPagina = paginaSeleccionada.target.getAttribute('offset');
-    const datosPagina = await cargarDatosPagina(offsetPagina);
-    actualizarPaginasGuia(datosPagina);
-    cerrarInfoPokemon();
-    return callbackSeleccionPagina(datosPagina.listadoPokemones);
-  }
+  actualizarIndicePagina(paginaSeleccionada);
+  const offsetPagina = paginaSeleccionada.target.getAttribute('offset');
+  const datosPagina = await cargarDatosPagina(offsetPagina);
+  actualizarPaginasGuia(datosPagina);
+  cerrarInfoPokemon();
+  return callbackSeleccionPagina(datosPagina.listadoPokemones);
 }
 
 function actualizarPaginasGuia(datosPagina) {

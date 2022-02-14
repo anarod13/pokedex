@@ -1,0 +1,39 @@
+{
+    "count": 1118,
+    "next": null,
+    "previous": "https://pokeapi.co/api/v2/pokemon?offset=1080&limit=30",
+    "results": [
+      {
+        "name": "grimmsnarl-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10213/"
+      },
+      {
+        "name": "alcremie-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10214/"
+      },
+      {
+        "name": "copperajah-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10215/"
+      },
+      {
+        "name": "duraludon-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10216/"
+      },
+      {
+        "name": "eternatus-eternamax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10217/"
+      },
+      {
+        "name": "urshifu-single-strike-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10218/"
+      },
+      {
+        "name": "urshifu-rapid-strike-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10219/"
+      },
+      {
+        "name": "toxtricity-low-key-gmax",
+        "url": "https://pokeapi.co/api/v2/pokemon/10220/"
+      }
+    ]
+  }
