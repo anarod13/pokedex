@@ -10,10 +10,8 @@ async function actualizarPagina(paginaSeleccionada) {
   return manejarCambioDePagina(paginaSeleccionada, armarTablero);
 }
 
-async function inicializar() {
+export default async function inicializar() {
   const datosAPI = await cargarDatosPagina(0);
   document.querySelector('#info-pokemon').style.display = 'none';
   return armarPaginador(datosAPI.totalPokemones, actualizarPagina);
 }
-
-inicializar();

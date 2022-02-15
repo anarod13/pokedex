@@ -20,6 +20,7 @@ export async function cargarPokemon(pokemonSeleccionado) {
   try { pokemon = cargarPokemonCache(indicePokemon); } catch (e) {
     const pokemonAPI = await cargarPokemonAPI(indicePokemon);
     pokemon = mapearPokemon(pokemonAPI);
+    console.log(pokemon);
     guardarPokemon(indicePokemon, pokemon);
   }
 
@@ -36,6 +37,7 @@ export async function cargarDatosPagina(offset = 0) {
   } catch (e) {
     const PokemonesPorPaginaAPI = await cargarDatosPaginaAPI(offset, LIMITE_DE_POKEMONES);
     datosPagina = mapearDatosPagina(PokemonesPorPaginaAPI);
+    console.log(datosPagina);
     guardarDatosPagina(pagina, datosPagina);
   }
 
