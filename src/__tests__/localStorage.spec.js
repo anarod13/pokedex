@@ -1,6 +1,8 @@
 /**
  * @jest-environment jsdom
  */
+/* eslint-disable func-names */
+/* eslint-disable quote-props */
 /* eslint-disable no-undef */
 import {
   guardarPokemon, guardarDatosPagina, cargarPokemon, cargarDatosPagina,
@@ -9,7 +11,7 @@ import {
 const fakeLocalStorage = (function () {
   let store = {
     'pagina-1': '{"urlAnterior":null,"urlSiguiente":"https://pokeapi.co/api/v2/pokemon/?offset=30&limit=30","totalPokemones":1118,"listadoPokemones":["bulbasaur","ivysaur","venusaur","charmander","charmeleon","charizard","squirtle","wartortle","blastoise","caterpie","metapod","butterfree","weedle","kakuna","beedrill","pidgey","pidgeotto","pidgeot","rattata","raticate","spearow","fearow","ekans","arbok","pikachu","raichu","sandshrew","sandslash","nidoran-f","nidorina"]}',
-    'appletun': '{"nombre":"appletun","foto":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/842.png","id":842,"categoria":"grass","habilidad":"ripen","peso":130,"altura":4}'
+    'appletun': '{"nombre":"appletun","foto":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/842.png","id":842,"categoria":"grass","habilidad":"ripen","peso":130,"altura":4}',
   };
 
   return {

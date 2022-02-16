@@ -1,5 +1,6 @@
-import inicializar from "../main";
-import "../index";
+/* eslint-disable no-undef */
+import inicializar from '../main';
+import '../index';
 
 jest.mock('../main.js', () => jest.fn());
 

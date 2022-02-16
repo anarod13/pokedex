@@ -11,9 +11,12 @@ export default `<!DOCTYPE html>
 
     <h1>Pokedex</h1>
     <div id="tipos"></div>
-
-    <div id="indice">
-
+      <div class="pagina" offset="" id="anterior"><<</div>
+      <div class="pagina" offset="0">1</div>
+      <div class="pagina" offset="30">2</div>
+      <div class="pagina" offset="60">3</div>
+      <div class="pagina" offset="90">4</div>
+      <div id="indice">
     </div>
     <div id="poketablero">
         <div class="pokeficha" id="bulbasaur">bulbasaur</div>  
