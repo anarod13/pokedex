@@ -3,7 +3,7 @@
  */
 /* eslint-disable no-undef */
 import { armarTablero } from '../tablero';
-import indexFixture from '../../__tests__/index.fixture';
+import indexFixture from './fixtures/indice.fixture';
 
 const listadoPokemonesA = [
   'dragalge',

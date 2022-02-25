@@ -3,9 +3,9 @@
  */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
-import datosPaginaFixture2 from './datosPagina2.fixture.json';
+import datosPaginaFixture2 from './fixtures/datosPagina2.fixture.json';
 import { manejarCambioDePagina } from '../manejoCambioDePagina';
-import indiceFixture from './indice.fixture';
+import indiceFixture from './fixtures/indice.fixture';
 
 document.body.innerHTML = indiceFixture;
 

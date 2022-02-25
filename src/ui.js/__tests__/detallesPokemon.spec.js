@@ -4,7 +4,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/extensions */
 
-import fixture from '../../__tests__/index.fixture';
+import fixture from '../../__tests__/fixtures/tablero.fixture';
 import { mostrarDetallesPokemon } from '../detallesPokemon';
 
 const detallesPokemon = {

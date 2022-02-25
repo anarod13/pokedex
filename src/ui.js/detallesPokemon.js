@@ -10,7 +10,7 @@ export async function mostrarDetallesPokemon(detallesPokemon) {
   document.querySelector('#peso').innerText = detallesPokemon.peso;
   document.querySelector('#altura').innerText = detallesPokemon.altura;
 
-  mostrarInfoPokemon();
+  return mostrarInfoPokemon();
 }
 
 function mostrarInfoPokemon() {

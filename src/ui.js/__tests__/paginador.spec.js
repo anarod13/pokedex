@@ -4,7 +4,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable import/extensions */
 import { armarPaginador } from '../paginador';
-import indexFixture from '../../__tests__/index.fixture';
+import indexFixture from '../../__tests__/fixtures/tablero.fixture';
 
 const totalPokemones = 1118;
 const mockCallback = jest.fn();

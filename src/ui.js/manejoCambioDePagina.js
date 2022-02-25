@@ -51,7 +51,7 @@ function actualizarPaginasGuia(datosPagina) {
   }
 
   const $paginaSiguiente = document.querySelector('#siguiente');
-  if (datosPagina.urlSiguiente) {
+  if (datosPagina.urlSiguiente !== null) {
     const offsetSiguiente = obtenerOffsetPagina(datosPagina.urlSiguiente);
     $paginaSiguiente.setAttribute('offset', offsetSiguiente);
     $paginaSiguiente.classList.remove('deshabilitada');

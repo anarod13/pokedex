@@ -8,7 +8,7 @@ export default `<div id="indice">
     <div class="pagina" offset="150">6</div>
     <div class="pagina" offset="180">7</div>
     <div class="pagina" offset="210">8</div>
-    <div class="pagina" offset="240">9</div>
+    <div class="pagina seleccionada" offset="240">9</div>
     <div class="pagina" offset="270">10</div>
     <div class="pagina" offset="300">11</div>
     <div class="pagina" offset="330">12</div>

@@ -3,10 +3,10 @@
  */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-undef */
-import datosPokemonAPI from './datosPokemonAPI.fixture.json';
-import datosPaginaAPI from './datosPagina2.fixture.json';
+import datosPokemonAPI from './fixtures/datosPokemonAPI.fixture.json';
+import datosPaginaAPI from './fixtures/datosPagina2.fixture.json';
 import { cargarPokemon, cargarDatosPagina } from '../cambios';
-import indexFixture from './indexB.fixture';
+import indexFixture from './fixtures/indexCompleto.fixture';
 
 document.body.innerHTML = indexFixture;
 
